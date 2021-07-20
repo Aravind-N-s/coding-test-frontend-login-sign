@@ -17,7 +17,7 @@ function App() {
       //Check to see if Metamask is installed
       if (!window.ethereum) {
         setErrorMessage(
-          "No wallet found try https://metamask.io/download.html and set an account!"
+          "No wallet found try https://metamask.io/download.html and setup an account!"
         );
         return;
       }
@@ -53,9 +53,7 @@ function App() {
   return (
     <Fragment>
       <p> Click the below button to proceed</p>
-      <button onClick={() => handleSignin()} className="btn btn-primary">
-        {"Sign in"}
-      </button>
+      <button onClick={handleSignin}>{"Sign in"}</button>
       <p>{getErrorMessage ? getErrorMessage : null} </p>
       <p>{getJWTToken ? `JWT Auth token: ${getJWTToken}` : null} </p>
     </Fragment>
